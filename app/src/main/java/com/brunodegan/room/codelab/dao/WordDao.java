@@ -1,5 +1,6 @@
 package com.brunodegan.room.codelab.dao;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -14,7 +15,7 @@ import java.util.List;
 @Dao
 public interface WordDao {
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+   @Insert(onConflict = OnConflictStrategy.ABORT)
     void insert(Word word);
 
     @Delete
@@ -23,7 +24,7 @@ public interface WordDao {
     @Query("DELETE FROM word_table")
     void deleteAllwords();
 
-    @Query("SELECT * from word_table ORDER BY word ASC")
-    List<Word> getAllWords();
+    @Query("SELECT * FROM word_table ORDER BY word ASC")
+    LiveData<List<Word>> getAllWords();
 
 }
