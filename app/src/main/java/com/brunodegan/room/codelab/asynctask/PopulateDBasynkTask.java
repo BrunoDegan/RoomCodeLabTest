@@ -6,10 +6,6 @@ import com.brunodegan.room.codelab.dao.WordDao;
 import com.brunodegan.room.codelab.database.WordRoomDatabase;
 import com.brunodegan.room.codelab.model.Word;
 
-/**
- * Created by brunodegan on 20/12/17.
- */
-
 public class PopulateDBasynkTask extends AsyncTask {
 
     private WordDao mDao;
@@ -22,8 +18,18 @@ public class PopulateDBasynkTask extends AsyncTask {
         mDao.deleteAllwords();
         Word word = new Word("Hello");
         Word word2 = new Word("Hi");
-
+        Word word3 = new Word("Hi");
+        Word word4 = new Word("Hi");
+        Word word5 = new Word("Hi");
+        Word word6 = new Word("Hi");
+    
+    
         mDao.insert(word);
+        mDao.insert(word2);
+        mDao.insert(word3);
+        mDao.insert(word4);
+        mDao.insert(word5);
+        mDao.insert(word6);
         mDao.insert(word2);
 
         return null;
